@@ -6,8 +6,14 @@
     <%= post.date %>
   </td>
   <td>
-    <%= post.user.last_name %>
+    <%= post.user.full_name %>
   <td>
     <%= truncate(post.rationale) %>
+  </td>
+  <td>
+    <%= link_to 'Edit', edit_post_path(post), id: "edit_#{post.id}" %>
+  </td>
+  <td>
+    <%= link_to 'Delete', post_path(post), method: :delete, id: "delete_post_#{post.id}", data: { confirm: 'Are you sure?'} %>
   </td>
 </tr>
